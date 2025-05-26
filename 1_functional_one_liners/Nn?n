@@ -1,0 +1,11 @@
+import functools
+
+lines = [line.strip() for line in open('names.txt')]
+
+new_lines = []
+min = lines[0]
+count = 0
+for i in lines:
+    if len(i) < len(min):
+        count = len(i)
+print(count)
