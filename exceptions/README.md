@@ -15,7 +15,7 @@ This directory contains educational and practical examples of **custom exception
 | Safe file reading using `try-except-finally` blocks. | `file_reading_with_try.py` |
 | Example of raising and catching a custom exception (`UnderAge`). | `custom_exception_underage.py` |
 | Module initializer for importing the exceptions as a package. | `__init__.py` |
-asvgdasdf
+
 ---
 
 ## ✅ How to Use
@@ -27,27 +27,70 @@ You can run each file independently for demo purposes.
 ```bash
 python validators.py
 
----
+### Expected output will include messages such as:
 
-### הסברים:
+```python
+The username 1 is too short.
+The password 2 is too short.
+...
+Ok
 
-| תיאור | הסבר |
-|-------|------|
-| `#` | כותרת ראשית |
-| `##` | כותרת משנית |
-| טבלאות עם `|` | תואם ל־GitHub Markdown ומוצג יפה |
-| קוד עם שלוש backticks (```) | כך מוסיפים בלוקים של קוד (`bash`, `text`, `python`) |
-| אימוג'ים (אופציונלי) | מוסיפים עיצוב ידידותי |
+### ▶️ Example: Using UnderAge exception
 
----
+```bash
+python custom_exception_underage.py
 
-### 🧪 בדיקה
+### Output:
 
-כדי לבדוק את התוצאה:
-1. שמור את הקובץ כ־`README.md`.
-2. העלה אותו לגיטב בפרויקט הרלוונטי.
-3. פתח את הדף הראשי של הריפוזיטורי – התצוגה תופיע מעוצבת אוטומטית.
+```text
+Function Expected positive integer, and instead got 17.
+You should send an invite to name
 
----
+```pgsql
+Function Expected positive integer, and instead got 17.
+You should send an invite to name
 
-רוצה שאכין לך את זה בקובץ מוכן להורדה? או להוסיף גם גרסה בעברית/דו-לשונית?
+
+
+```csharp
+Function Expected positive integer, and instead got 17.
+You should send an invite to name
+
+
+🧠 Highlights and Learning Points
+✅ Modular Design: Each exception is split into logical modules (username, password, etc.)
+
+🔐 Strong Validation: Includes pattern matching using re, character checks, and full password policies.
+
+📚 Educational Use: Good examples of exception inheritance, override of __str__, and try-except structures.
+
+♻️ Reusable Code: You can import these classes into other projects.
+
+🛠️ Tech Notes
+All filenames are lowercase and use underscores (PEP8).
+
+Classes use CamelCase, and exception classes inherit from Python's Exception.
+
+Regex-based character validation for username.
+
+Password validation includes uppercase, lowercase, digit, special character requirements, and length boundaries.
+
+📦 Example Folder Usage as a Module
+If you want to import this as a module:
+
+python
+Copy
+Edit
+from exceptions.validators import check_input
+You may need to include the folder in your PYTHONPATH or use relative imports if integrated in a larger project.
+
+✍️ Suggestions for Further Enhancement
+ Add tests/ folder with unittest or pytest tests.
+
+ Support multi-language exception messages (i18n).
+
+ Expand validators.py to support email and phone validation.
+
+ Add logging for invalid input attempts.
+
+
