@@ -26,6 +26,7 @@ You can run each file independently for demo purposes.
 
 ```bash
 python validators.py
+```
 
 ### Expected output will include messages such as:
 
@@ -34,28 +35,31 @@ The username 1 is too short.
 The password 2 is too short.
 ...
 Ok
+```
 
 ### ▶️ Example: Using UnderAge exception
 
 ```bash
 python custom_exception_underage.py
+```
 
 ### Output:
 
 ```text
 Function Expected positive integer, and instead got 17.
 You should send an invite to name
+```
 
 ```pgsql
 Function Expected positive integer, and instead got 17.
 You should send an invite to name
-
+```
 
 
 ```csharp
 Function Expected positive integer, and instead got 17.
 You should send an invite to name
-
+```
 
 🧠 Highlights and Learning Points
 ✅ Modular Design: Each exception is split into logical modules (username, password, etc.)
