@@ -27,29 +27,81 @@ You can run each file independently for demo purposes.
 ```bash
 python validators.py
 
+Expected output will include messages such as:
 
-#📁 exceptions/ – Custom Exceptions and Validation Utilities in Python
-This directory contains educational and practical examples of custom exceptions, validation logic, and error handling techniques in Python.
+The username 1 is too short.
+The password 2 is too short.
+...
+Ok
 
-📄 Included Files
-Filename	Description
-validators.py	Username and password validation logic using custom exceptions.
-username_exceptions.py	Custom exception classes for validating usernames.
-password_exceptions.py	Custom exception classes for validating passwords.
-iterator_errors.py	Demonstrates use of __iter__, __next__, and handling StopIteration.
-file_reading_with_try.py	Safe file reading using try-except-finally blocks.
-custom_exception_underage.py	Example of raising and catching a custom exception (UnderAge).
-__init__.py	Module initializer for importing the exceptions as a package.
 
-✅ How to Use
-You can run each file independently for demo purposes.
 
-Example: Running the validator
-bash
+Expected output will include messages such as:
+
+text
 Copy
 Edit
-python validators.py
-Expected output will include messages such as:
+The username 1 is too short.
+The password 2 is too short.
+...
+Ok
+🛠️ Tech Notes
+All files are lowercase with underscores (snake_case) – consistent with PEP8.
+
+Classes use CamelCase and inherit from Exception.
+
+Username is validated via regex; passwords must meet strength criteria.
+
+Includes examples of raising, catching, and customizing exceptions.
+
+✍️ Suggestions for Improvement
+ Add unit tests (pytest / unittest)
+
+ Support for more input types (email, phone, etc.)
+
+ Add a logger or audit trail
+
+ Add i18n support (multi-language error messages)
+
+yaml
+Copy
+Edit
+
+---
+
+### הסברים:
+
+| תיאור | הסבר |
+|-------|------|
+| `#` | כותרת ראשית |
+| `##` | כותרת משנית |
+| טבלאות עם `|` | תואם ל־GitHub Markdown ומוצג יפה |
+| קוד עם שלוש backticks (```) | כך מוסיפים בלוקים של קוד (`bash`, `text`, `python`) |
+| אימוג'ים (אופציונלי) | מוסיפים עיצוב ידידותי |
+
+---
+
+### 🧪 בדיקה
+
+כדי לבדוק את התוצאה:
+1. שמור את הקובץ כ־`README.md`.
+2. העלה אותו לגיטב בפרויקט הרלוונטי.
+3. פתח את הדף הראשי של הריפוזיטורי – התצוגה תופיע מעוצבת אוטומטית.
+
+---
+
+רוצה שאכין לך את זה בקובץ מוכן להורדה? או להוסיף גם גרסה בעברית/דו-לשונית?
+
+
+
+
+
+
+
+
+
+
+
 
 csharp
 Copy
