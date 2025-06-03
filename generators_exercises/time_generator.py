@@ -1,54 +1,53 @@
+"""
+datetime_generator.py
+
+Generates full datetime strings (DD/MM/YYYY HH:MM:SS) using generator functions for years, months, days, hours, minutes and seconds.
+"""
+
 def gen_secs():
-    secs = (s for s in range(60))
-    return secs
+    return (s for s in range(60))
+
 def gen_minutes():
-    minutes = (m for m in range(60))
-    return minutes
+    return (m for m in range(60))
+
 def gen_hours():
-    hours = (h for h in range(24))
-    return hours
+    return (h for h in range(24))
+
 def gen_time():
-    time = ("%02d:%02d:%02d" %(h, m, s) for h in gen_hours() for m in gen_minutes() for s in gen_secs())
-    return time
-t = gen_time()
+    return ("%02d:%02d:%02d" % (h, m, s) for h in gen_hours() for m in gen_minutes() for s in gen_secs())
 
-
+def is_leap_year(year):
+    return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
 
 def gen_years(start=2019):
     while True:
         yield start
         start += 1
-y = gen_years()
+
 def gen_months():
-    for m in range(12):
-        yield m+1
-m = gen_months()
-def gen_days(month, leap_year=False):
-    number_month = {1: 31, 2: 28, 3: 31, 4: 29, 5: 31, 6: 29, 7: 31, 8: 31, 9: 29, 10: 31, 11: 29, 12: 31}
-    leap_number_month = {1: 31, 2: 29, 3: 31, 4: 29, 5: 31, 6: 29, 7: 31, 8: 31, 9: 29, 10: 31, 11: 29, 12: 31}
-    if y % 4 == 0:
-        leap_year = True
-        if y % 100 == 0:
-            leap_year = False
-            if y % 400 == 0:
-                leap_year = True
-    if leap_year: return leap_number_month[month]
-    else: return number_month[month]
-def gen_day():
-    for d in range(gen_days(m)):
-        yield d+1
+    for m in range(1, 13):
+        yield m
 
-count = 0
-for y in gen_years():
-    for m in gen_months():
-        for d in gen_day():
-            for t in gen_time():
-                count+=1
-                if count>1000000:
-                    count = 0
-                    print("%02d/%02d/%02d" %(d,m,y) ,t, '\n')
+def gen_days(month, year):
+    month_days = {
+        1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30,
+        7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31
+    }
+    if month == 2 and is_leap_year(year):
+        return (d for d in range(1, 30))
+    else:
+        return (d for d in range(1, month_days[month] + 1))
 
-# date = (("%02d/%02d/%02d" %(d,m,y) ,t) for y in gen_years() for m in gen_months() for d in gen_day() for t in gen_time())
-# date = ([d, m, y, t] for y in gen_years() for m in gen_months() for d in gen_days_of_month() for t in gen_time())
-# dd / mm / yyyy  hh: mm:ss
+def main():
+    count = 0
+    for y in gen_years():
+        for m in gen_months():
+            for d in gen_days(m, y):
+                for t in gen_time():
+                    print("%02d/%02d/%04d %s" % (d, m, y, t))
+                    count += 1
+                    if count > 1_000_000:
+                        return
 
+if __name__ == "__main__":
+    main()
