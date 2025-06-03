@@ -27,3 +27,20 @@ Each script is executable individually and contains a `main()` function for clar
 
 ```bash
 python prime_number_generator.py
+```
+
+## 🛠️ Tools & Requirements
+- Python 3.8+
+
+- Optional:
+
+- `grafanalib` (for dashboard script)
+
+- Windows OS (for `winsound` usage)
+
+## 🔬 Educational Goals
+- Understand the benefits of lazy evaluation with `yield`
+
+- Learn how to modularize scripts with `main()` blocks
+
+- Practice real-world use cases for generator expressions
