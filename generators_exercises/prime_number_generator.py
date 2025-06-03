@@ -1,15 +1,26 @@
+"""
+prime_generator.py
+
+Generates prime numbers starting from a given number using a generator expression.
+"""
+
 def is_prime(n):
-    # Corner case
+    """Returns True if n is a prime number."""
     if n <= 1:
         return False
-    # Check from 2 to n-1
-    for i in range(2, n):
+    for i in range(2, int(n**0.5)+1):
         if n % i == 0:
             return False
     return True
 
+def first_prime_over(n):
+    """Returns a generator yielding prime numbers starting from n."""
+    return (i for i in range(n, 10**10) if is_prime(i))
 
+def main():
+    start = 10_000_000
+    gen = first_prime_over(start)
+    print(f"First prime number over {start} is: {next(gen)}")
 
-def first_prime_over(n): return (i for i in range(n, 10**10) if is_prime(i) == True)
-
-print(next(first_prime_over(10000000)))
+if __name__ == "__main__":
+    main()
