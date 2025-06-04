@@ -11,4 +11,4 @@ It includes:
 - Working with files and modules
 
 All solutions are written by me as part of my personal learning journey.
-![Tests](https://github.com/shimon066536/nextpy-finctional-chalenges/actions/workflows/python-tests-manual.yml/badge.svg)
+![Tests](https://github.com/shimon066536/nextpy-functional-challenges/actions/workflows/python-tests-manual.yml/badge.svg)
